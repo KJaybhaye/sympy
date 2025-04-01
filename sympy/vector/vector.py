@@ -579,6 +579,12 @@ class Cross(Vector):
         obj._expr2 = expr2
         return obj
 
+    def __add__(self, other):
+       return self.doit() + other.doit()
+
+    def __sub__(self, other):
+        return self.doit() - other.doit()
+
     def doit(self, **hints):
         return cross(self._expr1, self._expr2)
 
